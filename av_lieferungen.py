@@ -11,6 +11,7 @@ DB_USER = "mspublic"
 DB_PWD = "mspublic"
 DB_SCHEMA = "av_avdpool_ch"
 DB_LAYER = "av_avdpool_ch.gemeindegrenzen_gemeindegrenze"
+PATH = "/home/stefan/Projekte/av_mapcache_seed"
 
 # Enable exceptions
 ogr.UseExceptions() 
@@ -27,7 +28,7 @@ print lyr
 lyr.SetAttributeFilter("lieferdatum = current_date")
 
 driver = ogr.GetDriverByName("ESRI Shapefile")
-out_datasource = driver.CreateDataSource("av_lieferungen.shp")
+out_datasource = driver.CreateDataSource(PATH + "/av_lieferungen_fubar.shp")
 
 # Es werden OHNE ein Union alle einzelnen Feature/Geometrien exportiert.
 # Funktioniert das mit MapCache?
